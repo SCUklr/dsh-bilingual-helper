@@ -528,7 +528,7 @@ window.__ModuleLoader__.load({
     function apply(ctx) {
       beacon('plugin-applied', { version: '1.0.0' });
 
-      const locale = ctx.get('locale');
+      const locale = ctx.locale ?? ctx.get('locale');
       if (locale !== undefined && locale !== null && typeof locale.register === 'function') {
         ctx.effect(() => locale.register(NS, DICTIONARIES), 'en-translation: dictionaries');
       } else {
@@ -548,7 +548,7 @@ window.__ModuleLoader__.load({
       ctx.slots.inject('conversation.chat.node', () => ctx.slots.register(slotOptions, TranslationRow));
       beacon('plugin-slot-registered', { key: RENDER_KIND });
 
-      const uiConversation = ctx.get('uiConversation');
+      const uiConversation = ctx.uiConversation ?? ctx.get('uiConversation');
       const registry = uiConversation?.events;
       if (registry === undefined || registry === null || typeof registry.register !== 'function') {
         beacon('plugin-no-conversation-registry', { keys: Object.keys(uiConversation ?? {}) });
@@ -577,7 +577,7 @@ window.__ModuleLoader__.load({
     }
 
     return {
-      inject: ['slots'],
+      inject: ['slots', 'locale', 'uiConversation'],
       apply,
     };
   },
