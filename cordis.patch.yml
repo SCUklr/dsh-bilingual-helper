@@ -1,0 +1,16 @@
+# Bundle patch for @local/dsh-en-translation.
+#
+# The row list inserts the opt-in machine translator service this plugin consumes
+# (it ships with DSH, so the bundle declares no dependency on it) and then the
+# plugin row itself.
+- insert:
+    - id: translator
+      name: '@deepseek-ai/dsh-experimental-translator'
+      config:
+        provider: deepseek-official
+        maxTextChars: 4000
+    - id: en-translation
+      name: '@local/dsh-bilingual-helper'
+      config:
+        targetLanguage: en
+        provider: deepseek-official
