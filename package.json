@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "description": "Bilingual learning helper: a button under each chat question and answer that reveals the full English translation.",
+  "author": "SCUklr",
+  "license": "MIT",
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
@@ -16,7 +18,8 @@
     "cordis.patch.yml",
     "README.md",
     "locale/*.json",
-    "icon.svg"
+    "icon.svg",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {

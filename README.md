@@ -93,3 +93,7 @@ dsh-plugins/en-translation/
 - 机器翻译会改写 Markdown 排版与专有名词；原文始终保留在上方，可对照阅读。
 - 一条回复如果分多个 assistant 消息（多步工具调用），中文的每一步都会有自己的按钮。
 - 翻译结果不落盘、不跨页面持久化；刷新页面后需重新点一次。
+
+## 许可证 · License
+
+[MIT](LICENSE) © 2026 SCUklr
